@@ -1,0 +1,154 @@
+:root {
+  --black: #0a0a0a;
+  --charcoal: #151515;
+  --card: #1b1b1b;
+  --card-border: #2b2b2b;
+  --yellow: #F4C300;
+  --yellow-dark: #caa300;
+  --white: #ffffff;
+  --offwhite: #f7f7f5;
+  --border: #e7e5df;
+  --gray: #5c5c58;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--white); font-family: 'Inter', sans-serif; color: var(--black); }
+a { color: var(--black); text-decoration: none; transition: color 0.2s ease; }
+h1, h2, h3 { font-family: 'Anton', 'Oswald', sans-serif; margin: 0; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; }
+img { max-width: 100%; display: block; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes gentlePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes pulseRing { 0% { transform: scale(1); opacity: 0.55; } 100% { transform: scale(1.9); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ---------- Topbar ---------- */
+.topbar { background: var(--black); color: var(--yellow); padding: 0.35rem 1rem; font-size: 0.72rem; font-weight: 700; font-family: 'Oswald', sans-serif; letter-spacing: 0.2px; text-align: center; }
+
+/* ---------- Botões genéricos ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0.7rem 1.4rem; border-radius: 999px; font-weight: 800; font-size: 0.9rem; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.3px; transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease; }
+.btn-lg { padding: 1rem 2rem; font-size: 1rem; }
+.btn-primary { background: var(--black); color: var(--yellow); box-shadow: 0 8px 22px rgba(0,0,0,0.18); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,0,0,0.26); }
+
+/* ---------- Header ---------- */
+.header { position: sticky; top: 0; z-index: 20; background: var(--black); padding: 0.8rem 0; border-bottom: 1px solid var(--card-border); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; }
+.brand-mark { height: 38px; width: auto; }
+
+.nav-toggle-input { display: none; }
+.nav-toggle-btn { display: none; }
+
+.header-nav { display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap; }
+.nav-pill { font-weight: 700; font-size: 0.88rem; color: #fff; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.3px; }
+.nav-pill:hover { color: var(--yellow); }
+.nav-cta { padding: 0.55rem 1.2rem; font-size: 0.82rem; }
+
+/* ---------- WhatsApp flutuante ---------- */
+.whatsapp-float { position: fixed; right: 1.3rem; bottom: 1.3rem; z-index: 60; width: 62px; height: 62px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 22px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.whatsapp-float:hover { background: #1fb857; transform: scale(1.08); }
+.whatsapp-float-icon { width: 30px; height: 30px; }
+.whatsapp-float-ring { position: absolute; inset: 0; border-radius: 50%; background: #25D366; animation: pulseRing 2.2s ease-out infinite; z-index: -1; }
+
+/* ---------- Hero ---------- */
+.hero { background: var(--black); }
+.hero-media { width: 100%; line-height: 0; overflow: hidden; }
+.hero-media img { width: 100%; height: auto; max-height: 440px; object-fit: cover; animation: heroZoom 9s ease-in-out infinite alternate; transform-origin: 48% 38%; will-change: transform; }
+@keyframes heroZoom {
+  0%   { transform: scale(1.18) translate(1%, 0%); }
+  50%  { transform: scale(1.0) translate(0%, 0%); }
+  100% { transform: scale(1.14) translate(-1%, -1%); }
+}
+
+/* ---------- Produtos (tiles de categoria) ---------- */
+.section { padding: 3.4rem 0 1rem; }
+.section-title { font-size: 1.9rem; color: var(--black); text-align: center; }
+.section-subtitle { color: var(--gray); margin: 0.5rem 0 2rem; font-size: 1rem; font-family: 'Inter', sans-serif; text-align: center; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+.grid-cat { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; margin-bottom: 1rem; }
+
+.card-cat { background: var(--black); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.28s ease, box-shadow 0.28s ease; }
+.card-cat:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(0,0,0,0.22); }
+.card-cat-img { width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: #f3f1ea; display: flex; align-items: center; justify-content: center; }
+.card-cat-img img { width: 100%; height: 100%; object-fit: contain; padding: 16px; transition: transform 0.45s ease; }
+.card-cat:hover .card-cat-img img { transform: scale(1.06); }
+.card-cat-body { padding: 1rem 1.1rem 1.2rem; display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
+.card-cat-name { font-size: 0.98rem; color: var(--yellow); font-family: 'Oswald', sans-serif; text-transform: uppercase; font-weight: 700; letter-spacing: 0.2px; line-height: 1.2; }
+.card-cat-link { font-size: 0.72rem; font-weight: 700; color: #cfcfcf; font-family: 'Oswald', sans-serif; white-space: nowrap; }
+.card-cat:hover .card-cat-link { color: var(--yellow); }
+
+/* ---------- Faixa 10% Pix ---------- */
+.pix-banner { background: var(--yellow); margin: 1.5rem 0 0; padding: 2.2rem 1.5rem; text-align: center; }
+.pix-banner h2 { color: var(--black); font-size: 1.8rem; }
+.pix-banner p { max-width: 640px; margin: 0.8rem auto 0; color: #1a1a1a; font-family: 'Inter', sans-serif; text-transform: none; font-size: 0.98rem; }
+
+/* ---------- Cards de produto (catálogo) ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.4rem; }
+
+.card { background: var(--card); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; position: relative; border: 1px solid var(--card-border); transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.5); border-color: var(--yellow); }
+.card-img { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #f3f1ea; display: flex; align-items: center; justify-content: center; }
+.card-img img { width: 100%; height: 100%; object-fit: contain; padding: 12px; transition: transform 0.45s ease; }
+.card:hover .card-img img { transform: scale(1.06); }
+.badge { position: absolute; top: 0.7rem; left: 0.7rem; background: var(--yellow); color: #0a0a0a; font-size: 0.68rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 999px; font-family: 'Oswald', sans-serif; text-transform: uppercase; animation: gentlePulse 2.4s ease-in-out infinite; }
+.card-body { padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.35rem; flex: 1; }
+.card-brand { font-size: 0.72rem; color: #a0a0a0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; font-family: 'Oswald', sans-serif; }
+.card-name { font-size: 1.05rem; color: #fff; line-height: 1.25; font-family: 'Oswald', sans-serif; text-transform: none; font-weight: 700; }
+.card-desc { font-size: 0.86rem; color: #a0a0a0; margin: 0; line-height: 1.45; flex: 1; font-family: 'Inter', sans-serif; }
+
+.card-prices { display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.3rem; flex-wrap: wrap; }
+.card-price-full { font-size: 0.82rem; color: #797979; text-decoration: line-through; font-family: 'Oswald', sans-serif; }
+.card-price-pix { font-weight: 800; font-size: 1.05rem; color: var(--yellow); font-family: 'Oswald', sans-serif; }
+
+.card-ctas { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem; }
+.btn-pix, .btn-parcelar { text-align: center; font-weight: 800; font-size: 0.78rem; padding: 0.6rem 0.8rem; border-radius: 999px; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.2px; transition: transform 0.18s ease, background 0.18s ease; }
+.btn-pix { background: var(--yellow); color: #0a0a0a; }
+.btn-pix:hover { background: #fff; transform: scale(1.02); }
+.btn-parcelar { background: transparent; color: #cfcfcf; border: 1px solid var(--card-border); }
+.btn-parcelar:hover { border-color: var(--yellow); color: var(--yellow); }
+
+/* ---------- CTA final ---------- */
+.cta-final { background: var(--offwhite); border-top: 1px solid var(--border); padding: 3.4rem 0; }
+.cta-final-inner { text-align: center; max-width: 520px; margin: 0 auto; }
+.cta-final h2 { color: var(--black); font-size: 1.7rem; }
+.cta-final p { color: var(--gray); margin: 0.8rem 0 1.6rem; font-family: 'Inter', sans-serif; text-transform: none; }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--black); color: #cfcfcf; padding: 3rem 0 2rem; }
+.footer-grid { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+.footer h3 { color: var(--yellow); font-size: 1.2rem; margin-bottom: 0.6rem; }
+.footer p, .footer a { color: #c9c9c9; font-size: 0.92rem; line-height: 1.6; }
+.footer a:hover { color: var(--yellow); }
+.footer-insta { display: inline-flex; align-items: center; gap: 0.4rem; background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4); color: #fff !important; font-weight: 700; padding: 0.55rem 1rem; border-radius: 999px; font-family: 'Oswald', sans-serif; }
+.footer-insta:hover { color: #fff !important; transform: translateY(-2px); }
+.footer-bottom { text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #262626; font-size: 0.8rem; color: #7a7a7a; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 960px) {
+  .grid-cat { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .brand-mark { height: 48px; }
+  .nav-toggle-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 0.9rem; background: var(--card); border: 1px solid var(--card-border); border-radius: 999px; font-weight: 700; font-size: 0.8rem; color: #fff; cursor: pointer; font-family: 'Oswald', sans-serif; }
+  .header-nav { display: none; flex-direction: column; align-items: stretch; width: 100%; gap: 0.3rem; margin-top: 0.7rem; }
+  .nav-toggle-input:checked ~ .header-nav { display: flex; }
+  .nav-pill { padding: 0.6rem 0.4rem; border-top: 1px solid var(--card-border); }
+  .whatsapp-float { width: 54px; height: 54px; right: 1rem; bottom: 1rem; }
+  .whatsapp-float-icon { width: 26px; height: 26px; }
+  .section-title { font-size: 1.5rem; }
+  .pix-banner h2 { font-size: 1.4rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+  .card-body { padding: 0.65rem 0.7rem 0.8rem; gap: 0.25rem; }
+  .card-name { font-size: 0.86rem; }
+  .card-desc { font-size: 0.74rem; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .btn-pix, .btn-parcelar { font-size: 0.7rem; padding: 0.55rem 0.6rem; }
+  .badge { font-size: 0.6rem; padding: 0.2rem 0.5rem; top: 0.5rem; left: 0.5rem; }
+}
+@media (max-width: 420px) {
+  .grid-cat { grid-template-columns: 1fr; }
+  .grid { gap: 0.55rem; }
+  .card-name { font-size: 0.8rem; }
+}
