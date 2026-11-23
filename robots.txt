@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://suplementacaopesada.com.br/sitemap.xml
