@@ -69,10 +69,11 @@ img { max-width: 100%; display: block; }
 .whatsapp-float-ring { position: absolute; inset: 0; border-radius: 50%; background: #25D366; animation: pulseRing 2.2s ease-out infinite; z-index: -1; }
 
 /* ---------- Hero ---------- */
-.hero { background: var(--black); }
-.hero-text { padding: 3.2rem 1.5rem; text-align: center; }
+.hero { background: var(--black); position: relative; overflow: hidden; }
+.hero-text { position: relative; z-index: 2; padding: 3.2rem 1.5rem; text-align: center; }
 .hero-text h1 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; color: #fff; font-size: clamp(1.9rem, 5vw, 3.4rem); line-height: 1.15; letter-spacing: 0.5px; margin: 0; }
 .hero-text h1 span { color: var(--yellow); }
+.hero-bg-video { display: none; }
 
 /* ---------- Produtos (tiles de categoria) ---------- */
 .section { padding: 3.4rem 0 1rem; scroll-margin-top: 90px; }
@@ -93,7 +94,8 @@ img { max-width: 100%; display: block; }
 .card-cat:hover .card-cat-link { color: var(--yellow); }
 
 /* ---------- Faixa 10% Pix ---------- */
-.pix-banner { background: var(--yellow); margin: 1.5rem 0 0; padding: 2.2rem 1.5rem; text-align: center; }
+.pix-banner { background: var(--yellow); margin: 1.5rem 0 0; padding: 2.2rem 1.5rem; text-align: center; animation: pixZoom 3.5s ease-in-out infinite; }
+@keyframes pixZoom { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.025); } }
 .pix-banner h2 { color: var(--black); font-size: 1.8rem; }
 .pix-banner p { max-width: 640px; margin: 0.8rem auto 0; color: #1a1a1a; font-family: 'Inter', sans-serif; text-transform: none; font-size: 0.98rem; }
 
@@ -158,6 +160,8 @@ img { max-width: 100%; display: block; }
   .reviews-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px) {
+  .hero-bg-video { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); z-index: 1; }
   .brand-mark { height: 32px; }
   .nav-toggle-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 0.9rem; background: var(--card); border: 1px solid var(--card-border); border-radius: 999px; font-weight: 700; font-size: 0.8rem; color: #fff; cursor: pointer; font-family: 'Oswald', sans-serif; }
   .header-nav { display: none; flex-direction: column; align-items: stretch; width: 100%; gap: 0.3rem; margin-top: 0.7rem; }
