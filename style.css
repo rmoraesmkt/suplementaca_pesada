@@ -75,7 +75,8 @@ img { max-width: 100%; display: block; }
 .hero-text h1 span { color: var(--yellow); }
 
 /* ---------- Produtos (tiles de categoria) ---------- */
-.section { padding: 3.4rem 0 1rem; }
+.section { padding: 3.4rem 0 1rem; scroll-margin-top: 90px; }
+#pix, #feedbacks { scroll-margin-top: 90px; }
 .section-title { font-size: 1.9rem; color: var(--black); text-align: center; }
 .section-subtitle { color: var(--gray); margin: 0.5rem 0 2rem; font-size: 1rem; font-family: 'Inter', sans-serif; text-align: center; max-width: 560px; margin-left: auto; margin-right: auto; }
 
