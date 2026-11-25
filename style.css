@@ -32,7 +32,6 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Header ---------- */
 .header { position: sticky; top: 0; z-index: 20; background: var(--black); padding: 0.8rem 0; border-bottom: 1px solid var(--card-border); transition: transform 0.28s ease; }
-.header.header--hidden { transform: translateY(-100%); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; }
 .brand-mark { height: 28px; width: auto; }
@@ -44,6 +43,18 @@ img { max-width: 100%; display: block; }
 .nav-pill { font-weight: 700; font-size: 0.88rem; color: #fff; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.3px; }
 .nav-pill:hover { color: var(--yellow); }
 .nav-cta { padding: 0.55rem 1.2rem; font-size: 0.82rem; }
+
+/* ---------- Dropdown "Produtos" no menu ---------- */
+.nav-dropdown { position: relative; }
+.nav-dropdown-summary { cursor: pointer; list-style: none; display: inline-block; }
+.nav-dropdown-summary::-webkit-details-marker { display: none; }
+.nav-dropdown-summary::after { content: ' ▾'; font-size: 0.7em; }
+.nav-dropdown-menu { display: flex; flex-direction: column; background: var(--black); border: 1px solid var(--card-border); border-radius: 12px; padding: 0.4rem; min-width: 240px; box-shadow: 0 16px 32px rgba(0,0,0,0.35); }
+.nav-dropdown-link { padding: 0.55rem 0.8rem; font-size: 0.82rem; font-weight: 700; color: #e8e8e8; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.2px; border-radius: 8px; }
+.nav-dropdown-link:hover { background: var(--card); color: var(--yellow); }
+@media (min-width: 721px) {
+  .nav-dropdown-menu { position: absolute; top: calc(100% + 10px); left: 0; z-index: 30; }
+}
 
 /* ---------- WhatsApp flutuante ---------- */
 .whatsapp-float { position: fixed; right: 1.3rem; bottom: 1.3rem; z-index: 60; width: 62px; height: 62px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 22px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; }
@@ -142,6 +153,8 @@ img { max-width: 100%; display: block; }
   .header-nav { display: none; flex-direction: column; align-items: stretch; width: 100%; gap: 0.3rem; margin-top: 0.7rem; }
   .nav-toggle-input:checked ~ .header-nav { display: flex; }
   .nav-pill { padding: 0.6rem 0.4rem; border-top: 1px solid var(--card-border); }
+  .nav-dropdown-menu { border: 0; box-shadow: none; padding: 0 0 0 0.8rem; min-width: 0; background: transparent; }
+  .nav-dropdown-link { padding: 0.5rem 0.4rem; color: #cfcfcf; }
   .whatsapp-float { width: 54px; height: 54px; right: 1rem; bottom: 1rem; }
   .whatsapp-float-icon { width: 26px; height: 26px; }
   .section-title { font-size: 1.5rem; }
