@@ -94,7 +94,7 @@ img { max-width: 100%; display: block; }
 .card-cat:hover .card-cat-link { color: var(--yellow); }
 
 /* ---------- Faixa 10% Pix ---------- */
-.pix-banner { background: var(--yellow); margin: 1.5rem 0 0; padding: 2.2rem 1.5rem; text-align: center; animation: pixZoom 2s ease-in-out infinite; }
+.pix-banner { background: var(--yellow); margin: 1.5rem 0 0; padding: 1.6rem 1.5rem; text-align: center; animation: pixZoom 2s ease-in-out infinite; }
 @keyframes pixZoom { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.09); } }
 @keyframes heroTextIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 .pix-banner h2 { color: var(--black); font-size: 1.8rem; }
@@ -163,12 +163,13 @@ img { max-width: 100%; display: block; }
 @media (max-width: 720px) {
   .hero { min-height: 140px; }
   .hero-bg-image { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-  .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.55); z-index: 1; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.42); z-index: 1; }
+  .hero-bg-image { object-position: center 55%; }
   .hero-text { padding: 2.2rem 1.2rem; }
   .hero-text h1 { animation: heroTextIn 0.9s ease-out both; }
   .brand-mark { height: 32px; }
   .nav-toggle-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 0.9rem; background: var(--card); border: 1px solid var(--card-border); border-radius: 999px; font-weight: 700; font-size: 0.8rem; color: #fff; cursor: pointer; font-family: 'Oswald', sans-serif; }
-  .header-nav { display: none; flex-direction: column; align-items: stretch; width: 100%; gap: 0.3rem; margin-top: 0.7rem; }
+  .header-nav { display: none; flex-direction: column; align-items: stretch; width: 100%; gap: 0.3rem; position: absolute; top: 100%; left: 0; right: 0; background: var(--black); padding: 0.7rem 1.2rem 1.4rem; max-height: calc(100vh - 72px); overflow-y: auto; z-index: 25; border-bottom: 1px solid var(--card-border); box-shadow: 0 16px 28px rgba(0,0,0,0.35); }
   .nav-toggle-input:checked ~ .header-nav { display: flex; }
   .nav-pill { padding: 0.6rem 0.4rem; border-top: 1px solid var(--card-border); }
   .nav-mobile-cats { border-top: 1px solid var(--card-border); }
