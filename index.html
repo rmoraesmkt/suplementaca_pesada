@@ -1625,9 +1625,23 @@
 (function () {
   var navToggle = document.getElementById('navToggle');
   document.querySelectorAll('.header-nav a, .nav-dropdown-menu a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      if (navToggle) navToggle.checked = false;
+    link.addEventListener('click', function (e) {
+      var href = link.getAttribute('href') || '';
+      var isHash = href.charAt(0) === '#' && href.length > 1;
+      var wasOpen = navToggle && navToggle.checked;
       document.querySelectorAll('.nav-dropdown[open]').forEach(function (d) { d.removeAttribute('open'); });
+      if (navToggle) navToggle.checked = false;
+      if (wasOpen && isHash) {
+        var target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+          });
+        }
+      }
     });
   });
 })();
