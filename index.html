@@ -101,9 +101,7 @@
 </a>
 
 <section id="inicio" class="hero">
-  <video class="hero-bg-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/hero-bg-poster.jpg">
-    <source src="images/hero-bg-mobile.mp4" type="video/mp4">
-  </video>
+  <img class="hero-bg-image" src="images/hero-bg-mobile.jpg" alt="" loading="eager">
   <div class="hero-text">
     <h1><span>SUPLEMENTO</span> DE VERDADE<br>PARA QUEM TREINA <span>PESADO</span>!</h1>
   </div>
@@ -1633,16 +1631,6 @@
       document.querySelectorAll('.nav-dropdown[open]').forEach(function (d) { d.removeAttribute('open'); });
     });
   });
-})();
-</script>
-<script>
-(function () {
-  var vid = document.querySelector('.hero-bg-video');
-  if (!vid) return;
-  var tryPlay = function () { vid.play().catch(function () {}); };
-  tryPlay();
-  document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
-  document.addEventListener('scroll', tryPlay, { once: true, passive: true });
 })();
 </script>
 <script>

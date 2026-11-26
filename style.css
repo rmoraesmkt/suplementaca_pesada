@@ -73,7 +73,7 @@ img { max-width: 100%; display: block; }
 .hero-text { position: relative; z-index: 2; padding: 3.2rem 1.5rem; text-align: center; }
 .hero-text h1 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; color: #fff; font-size: clamp(1.9rem, 5vw, 3.4rem); line-height: 1.15; letter-spacing: 0.5px; margin: 0; }
 .hero-text h1 span { color: var(--yellow); }
-.hero-bg-video { display: none; }
+.hero-bg-image { display: none; }
 
 /* ---------- Produtos (tiles de categoria) ---------- */
 .section { padding: 3.4rem 0 1rem; scroll-margin-top: 90px; }
@@ -160,8 +160,8 @@ img { max-width: 100%; display: block; }
   .reviews-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px) {
-  .hero-bg-video { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-  .hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.3); z-index: 1; }
+  .hero-bg-image { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .hero-text { display: none; }
   .brand-mark { height: 32px; }
   .nav-toggle-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 0.9rem; background: var(--card); border: 1px solid var(--card-border); border-radius: 999px; font-weight: 700; font-size: 0.8rem; color: #fff; cursor: pointer; font-family: 'Oswald', sans-serif; }
   .header-nav { display: none; flex-direction: column; align-items: stretch; width: 100%; gap: 0.3rem; margin-top: 0.7rem; }
