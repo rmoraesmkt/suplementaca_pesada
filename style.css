@@ -103,7 +103,7 @@ img { max-width: 100%; display: block; }
 .pix-banner p { max-width: 640px; margin: 0.8rem auto 0; color: #1a1a1a; font-family: 'Inter', sans-serif; text-transform: none; font-size: 0.98rem; }
 
 /* ---------- Cards de produto (catálogo) ---------- */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.4rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; }
 
 .card { background: var(--card); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; position: relative; border: 1px solid var(--card-border); transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, opacity 0.5s ease; }
 .card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.5); border-color: var(--yellow); }
@@ -111,20 +111,20 @@ img { max-width: 100%; display: block; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 .card.reveal.is-visible:hover { transform: translateY(-6px); }
 .card-img { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #ffffff; display: flex; align-items: center; justify-content: center; }
-.card-img img { width: 100%; height: 100%; object-fit: contain; padding: 12px; transition: transform 0.45s ease; }
+.card-img img { width: 100%; height: 100%; object-fit: contain; padding: 8px; transition: transform 0.45s ease; }
 .card:hover .card-img img { transform: scale(1.06); }
 .badge { position: absolute; top: 0.7rem; left: 0.7rem; background: var(--yellow); color: #0a0a0a; font-size: 0.68rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 999px; font-family: 'Oswald', sans-serif; text-transform: uppercase; animation: gentlePulse 2.4s ease-in-out infinite; }
-.card-body { padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.35rem; flex: 1; }
-.card-brand { font-size: 0.72rem; color: #a0a0a0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; font-family: 'Oswald', sans-serif; }
-.card-name { font-size: 1.05rem; color: #fff; line-height: 1.25; font-family: 'Oswald', sans-serif; text-transform: none; font-weight: 700; }
-.card-desc { font-size: 0.86rem; color: #a0a0a0; margin: 0; line-height: 1.45; flex: 1; font-family: 'Inter', sans-serif; }
+.card-body { padding: 0.8rem 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.3rem; flex: 1; }
+.card-brand { font-size: 0.68rem; color: #a0a0a0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; font-family: 'Oswald', sans-serif; }
+.card-name { font-size: 0.94rem; color: #fff; line-height: 1.22; font-family: 'Oswald', sans-serif; text-transform: none; font-weight: 700; }
+.card-desc { font-size: 0.78rem; color: #a0a0a0; margin: 0; line-height: 1.4; flex: 1; font-family: 'Inter', sans-serif; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-.card-prices { display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.3rem; flex-wrap: wrap; }
-.card-price-full { font-size: 0.82rem; color: #797979; text-decoration: line-through; font-family: 'Oswald', sans-serif; }
-.card-price-pix { font-weight: 800; font-size: 1.05rem; color: var(--yellow); font-family: 'Oswald', sans-serif; }
+.card-prices { display: flex; align-items: baseline; gap: 0.4rem; margin-top: 0.25rem; flex-wrap: wrap; }
+.card-price-full { font-size: 0.74rem; color: #797979; text-decoration: line-through; font-family: 'Oswald', sans-serif; }
+.card-price-pix { font-weight: 800; font-size: 0.95rem; color: var(--yellow); font-family: 'Oswald', sans-serif; }
 
-.card-ctas { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem; }
-.btn-pix, .btn-parcelar { text-align: center; font-weight: 800; font-size: 0.78rem; padding: 0.6rem 0.8rem; border-radius: 999px; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.2px; transition: transform 0.18s ease, background 0.18s ease; }
+.card-ctas { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.5rem; }
+.btn-pix, .btn-parcelar { text-align: center; font-weight: 800; font-size: 0.72rem; padding: 0.5rem 0.7rem; border-radius: 999px; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.2px; transition: transform 0.18s ease, background 0.18s ease; }
 .btn-pix { background: var(--yellow); color: #0a0a0a; }
 .btn-pix:hover { background: #fff; transform: scale(1.02); }
 .btn-parcelar { background: transparent; color: #cfcfcf; border: 1px solid var(--card-border); }
