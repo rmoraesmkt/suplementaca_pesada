@@ -101,7 +101,7 @@
 </a>
 
 <section id="inicio" class="hero">
-  <video class="hero-bg-video" autoplay muted loop playsinline webkit-playsinline preload="none" poster="images/hero-bg-poster.jpg">
+  <video class="hero-bg-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/hero-bg-poster.jpg">
     <source src="images/hero-bg-mobile.mp4" type="video/mp4">
   </video>
   <div class="hero-text">
@@ -1633,6 +1633,16 @@
       document.querySelectorAll('.nav-dropdown[open]').forEach(function (d) { d.removeAttribute('open'); });
     });
   });
+})();
+</script>
+<script>
+(function () {
+  var vid = document.querySelector('.hero-bg-video');
+  if (!vid) return;
+  var tryPlay = function () { vid.play().catch(function () {}); };
+  tryPlay();
+  document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+  document.addEventListener('scroll', tryPlay, { once: true, passive: true });
 })();
 </script>
 <script>

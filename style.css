@@ -94,8 +94,8 @@ img { max-width: 100%; display: block; }
 .card-cat:hover .card-cat-link { color: var(--yellow); }
 
 /* ---------- Faixa 10% Pix ---------- */
-.pix-banner { background: var(--yellow); margin: 1.5rem 0 0; padding: 2.2rem 1.5rem; text-align: center; animation: pixZoom 3.5s ease-in-out infinite; }
-@keyframes pixZoom { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.025); } }
+.pix-banner { background: var(--yellow); margin: 1.5rem 0 0; padding: 2.2rem 1.5rem; text-align: center; animation: pixZoom 2s ease-in-out infinite; }
+@keyframes pixZoom { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.09); } }
 .pix-banner h2 { color: var(--black); font-size: 1.8rem; }
 .pix-banner p { max-width: 640px; margin: 0.8rem auto 0; color: #1a1a1a; font-family: 'Inter', sans-serif; text-transform: none; font-size: 0.98rem; }
 
