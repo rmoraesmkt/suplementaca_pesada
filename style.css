@@ -160,6 +160,7 @@ img { max-width: 100%; display: block; }
   .reviews-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px) {
+  .hero { aspect-ratio: 4 / 1; min-height: 140px; }
   .hero-bg-image { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
   .hero-text { display: none; }
   .brand-mark { height: 32px; }
