@@ -96,6 +96,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Faixa 10% Pix ---------- */
 .pix-banner { background: var(--yellow); margin: 1.5rem 0 0; padding: 2.2rem 1.5rem; text-align: center; animation: pixZoom 2s ease-in-out infinite; }
 @keyframes pixZoom { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.09); } }
+@keyframes heroTextIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 .pix-banner h2 { color: var(--black); font-size: 1.8rem; }
 .pix-banner p { max-width: 640px; margin: 0.8rem auto 0; color: #1a1a1a; font-family: 'Inter', sans-serif; text-transform: none; font-size: 0.98rem; }
 
@@ -160,9 +161,11 @@ img { max-width: 100%; display: block; }
   .reviews-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px) {
-  .hero { aspect-ratio: 4 / 1; min-height: 140px; }
+  .hero { min-height: 140px; }
   .hero-bg-image { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-  .hero-text { display: none; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.55); z-index: 1; }
+  .hero-text { padding: 2.2rem 1.2rem; }
+  .hero-text h1 { animation: heroTextIn 0.9s ease-out both; }
   .brand-mark { height: 32px; }
   .nav-toggle-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 0.9rem; background: var(--card); border: 1px solid var(--card-border); border-radius: 999px; font-weight: 700; font-size: 0.8rem; color: #fff; cursor: pointer; font-family: 'Oswald', sans-serif; }
   .header-nav { display: none; flex-direction: column; align-items: stretch; width: 100%; gap: 0.3rem; margin-top: 0.7rem; }
